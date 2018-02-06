@@ -59,7 +59,11 @@
 
 <script>
 window.addEventListener('keydown', function(e){
-    console.log(e.keyCode);
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    //variable inside event, we need syntax with backtick `
+    if(!audio) return; //stop the function from running all together
+    console.log(audio);
+    audio.play();
 });
 </script>
 
