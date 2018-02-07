@@ -71,9 +71,14 @@
   </style>
 
   <script>
+    const secondHand = document.querySelector('.second-hand');
+    console.log(secondHand);
   function setHour(){
       const now = new Date();
-    console.log(now);
+      const seconds = now.getSeconds();
+      const secondsDegrees = ((seconds / 60) * 360);
+      secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+    console.log(seconds);
   }
   setInterval(setHour, 1000);
 
